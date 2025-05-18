@@ -1,6 +1,6 @@
-## SistemaContratacaoDocentes
+# SistemaContratacaoDocentes
 
-# Domínio: 
+## Domínio: 
 Uma faculdade deve fazer uma chamada pública para contratação temporária de docentes. Apenas 
 funcionários tem acesso ao sistema. É necessário ter um arquivo chamado disciplinas.csv com as 
 disciplinas disponíveis, é importante ter cadastrado o código da disciplina, o nome da disciplina, o dia da 
