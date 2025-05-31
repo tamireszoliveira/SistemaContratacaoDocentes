@@ -1,0 +1,59 @@
+package model;
+
+import java.time.*;
+
+public class Disciplinas {
+	private String codigoDisciplina;
+	private String nomeDisciplina;
+	private LocalDate dataMinistrada;
+	private LocalTime horaInicio;
+	private int horasDiarias;
+	
+	public Disciplinas(String codigoDisciplina, String nomeDisciplina, LocalDate dataMinistrada, LocalTime horaInicio, int horasDiarias) {
+		this.codigoDisciplina = codigoDisciplina;
+		this.nomeDisciplina = nomeDisciplina;
+		this.dataMinistrada = dataMinistrada;
+		this.horaInicio = horaInicio;
+		this.horasDiarias = horasDiarias;
+	}
+
+	public String getCodigoDisciplina() {
+		return codigoDisciplina;
+	}
+
+	public void setCodigoDisciplina(String codigoDisciplina) {
+		this.codigoDisciplina = codigoDisciplina;
+	}
+
+	public String getNomeDisciplina() {
+		return nomeDisciplina;
+	}
+
+	public void setNomeDisciplina(String nomeDisciplina) {
+		this.nomeDisciplina = nomeDisciplina;
+	}
+
+	public LocalDate getDataMinistrada() {
+		return dataMinistrada;
+	}
+
+	public void setDataMinistrada(LocalDate dataMinistrada) {
+		this.dataMinistrada = dataMinistrada;
+	}
+
+	public LocalTime getHoraInicio() {
+		return horaInicio;
+	}
+
+	public void setHoraInicio(LocalTime horaInicio) {
+		this.horaInicio = horaInicio;
+	}
+
+	public int getHorasDiarias() {
+		return horasDiarias;
+	}
+
+	public void setHorasDiarias(int horasDiarias) {
+		this.horasDiarias = horasDiarias;
+	}
+}
