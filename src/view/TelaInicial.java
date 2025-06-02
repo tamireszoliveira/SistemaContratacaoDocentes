@@ -14,6 +14,11 @@ import javax.swing.JTextPane;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import view.TelaDisciplinas;
+import view.TelaCursos;
+import view.TelaProfessor;
+import view.TelaInscricoes;
+
 
 public class TelaInicial extends JFrame {
 
@@ -78,17 +83,34 @@ public class TelaInicial extends JFrame {
 		btnNewButton_2.setFont(new Font("Arial", Font.PLAIN, 16));
 		contentPane.add(btnNewButton_2);
 		
-		ActionListener ouve = new ActionListener() {
+		ActionListener actListenerC = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				olaMundo();
+				TelaCursos.main(null);
 			}
 		};
 		
+		ActionListener actListenerD = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaDisciplinas.main(null);
+			}
+		};
+		ActionListener actListenerP = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaProfessor.main(null);
+			}
+		};
+		ActionListener actListenerI = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaInscricoes.main(null);
+			}
+		};
+		
+		
+		btnNewButton.addActionListener(actListenerC);
+		btnNewButton_1.addActionListener(actListenerD);
+		btnNewButton_3.addActionListener(actListenerP);
+		btnNewButton_2.addActionListener(actListenerI);
+		
 	}
 	
-	
-	public void olaMundo() {
-		System.out.println("Hello World");
-	}
-
 }
