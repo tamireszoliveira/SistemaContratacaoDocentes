@@ -49,17 +49,18 @@ public class TelaCursos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("+ Adicionar curso");
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setBounds(6, 46, 538, 36);
-		contentPane.add(btnNewButton);
+		JButton btnAdd = new JButton("+ Adicionar curso");
+		btnAdd.setBackground(new Color(255, 255, 255));
+		btnAdd.setBounds(6, 46, 538, 36);
+		contentPane.add(btnAdd);
 		
-		JTextPane txtpnDisciplinas = new JTextPane();
-		txtpnDisciplinas.setBackground(new Color(238, 238, 238));
-		txtpnDisciplinas.setFont(new Font("Arial", Font.PLAIN, 24));
-		txtpnDisciplinas.setText("Cursos");
-		txtpnDisciplinas.setBounds(249, 6, 76, 28);
-		contentPane.add(txtpnDisciplinas);
+		JTextPane txtCursos = new JTextPane();
+		txtCursos.setEditable(false);
+		txtCursos.setBackground(new Color(238, 238, 238));
+		txtCursos.setFont(new Font("Arial", Font.PLAIN, 24));
+		txtCursos.setText("Cursos");
+		txtCursos.setBounds(249, 6, 76, 28);
+		contentPane.add(txtCursos);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
@@ -67,40 +68,53 @@ public class TelaCursos extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JTextPane txtpnDisciplina = new JTextPane();
-		txtpnDisciplina.setBounds(6, 6, 78, 19);
-		panel.add(txtpnDisciplina);
-		txtpnDisciplina.setFont(new Font("Arial", Font.PLAIN, 16));
-		txtpnDisciplina.setText("Curso");
+		JTextPane txtCurso = new JTextPane();
+		txtCurso.setEditable(false);
+		txtCurso.setBounds(6, 6, 78, 19);
+		panel.add(txtCurso);
+		txtCurso.setFont(new Font("Arial", Font.PLAIN, 16));
+		txtCurso.setText("Curso");
 		
-		JTextPane txtpnCodigoDisc = new JTextPane();
-		txtpnCodigoDisc.setBounds(6, 25, 75, 16);
-		panel.add(txtpnCodigoDisc);
-		txtpnCodigoDisc.setText("Codigo Curso");
-		txtpnCodigoDisc.setFont(new Font("Arial", Font.PLAIN, 13));
+		JTextPane txtCod = new JTextPane();
+		txtCod.setEditable(false);
+		txtCod.setBounds(6, 25, 75, 16);
+		panel.add(txtCod);
+		txtCod.setText("Codigo Curso");
+		txtCod.setFont(new Font("Arial", Font.PLAIN, 13));
 		
-		JTextPane txtpnDiaDaSemana = new JTextPane();
-		txtpnDiaDaSemana.setText("Área Curso");
-		txtpnDiaDaSemana.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtpnDiaDaSemana.setBounds(6, 43, 110, 16);
-		panel.add(txtpnDiaDaSemana);
+		JTextPane txtArea = new JTextPane();
+		txtArea.setEditable(false);
+		txtArea.setText("Área Curso");
+		txtArea.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtArea.setBounds(6, 43, 110, 16);
+		panel.add(txtArea);
 		
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setIcon(new ImageIcon("./img/edit.png"));
-		btnNewButton_1.setBounds(416, 14, 45, 45);
-		panel.add(btnNewButton_1);
+		JButton btnEditar = new JButton("Editar");
+		btnEditar.setIcon(new ImageIcon("./img/edit.png"));
+		btnEditar.setBounds(337, 17, 90, 36);
+		panel.add(btnEditar);
 		
-		JButton btnNewButton_1_1 = new JButton("");
-		btnNewButton_1_1.setIcon(new ImageIcon("./img/delete.png"));
-		btnNewButton_1_1.setBounds(473, 14, 45, 45);
-		panel.add(btnNewButton_1_1);
+		JButton btnApagar = new JButton("Apagar");
+		btnApagar.setIcon(new ImageIcon("./img/delete.png"));
+		btnApagar.setBounds(436, 17, 90, 36);
+		panel.add(btnApagar);
+		
 		
 		ActionListener actListenerAdd = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TelaAddCursos.main(null);
+				TelaManterInscricao.main(false);
 			}
 		};
 		
-		btnNewButton.addActionListener(actListenerAdd);
+		ActionListener actListenerEdit = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaManterInscricao.main(true);
+			}
+		};
+		
+		btnAdd.addActionListener(actListenerAdd);
+		btnEditar.addActionListener(actListenerEdit);
 	}
+	
+	
 }

@@ -52,88 +52,108 @@ public class TelaInscricoes extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("+ Adicionar inscrição");
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setBounds(6, 46, 538, 36);
-		contentPane.add(btnNewButton);
+		JButton btnInsc = new JButton("+ Adicionar inscrição");
+		btnInsc.setBackground(new Color(255, 255, 255));
+		btnInsc.setBounds(6, 46, 538, 36);
+		contentPane.add(btnInsc);
 		
-		JTextPane txtpnDisciplinas = new JTextPane();
-		txtpnDisciplinas.setBackground(new Color(238, 238, 238));
-		txtpnDisciplinas.setFont(new Font("Arial", Font.PLAIN, 24));
-		txtpnDisciplinas.setText("Inscrições");
-		txtpnDisciplinas.setBounds(227, 6, 108, 28);
-		contentPane.add(txtpnDisciplinas);
+		JTextPane txtInscricoes = new JTextPane();
+		txtInscricoes.setEditable(false);
+		txtInscricoes.setBackground(new Color(238, 238, 238));
+		txtInscricoes.setFont(new Font("Arial", Font.PLAIN, 24));
+		txtInscricoes.setText("Inscrições");
+		txtInscricoes.setBounds(227, 6, 108, 28);
+		contentPane.add(txtInscricoes);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(6, 137, 538, 110);
+		panel.setBounds(6, 137, 538, 124);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JTextPane txtpnDisciplina = new JTextPane();
-		txtpnDisciplina.setBounds(6, 6, 78, 19);
-		panel.add(txtpnDisciplina);
-		txtpnDisciplina.setFont(new Font("Arial", Font.PLAIN, 16));
-		txtpnDisciplina.setText("Nome");
+		JTextPane txtNome = new JTextPane();
+		txtNome.setEditable(false);
+		txtNome.setBounds(6, 6, 78, 19);
+		panel.add(txtNome);
+		txtNome.setFont(new Font("Arial", Font.PLAIN, 16));
+		txtNome.setText("Nome");
 		
-		JTextPane txtpnCodigoDisc = new JTextPane();
-		txtpnCodigoDisc.setBounds(6, 25, 75, 16);
-		panel.add(txtpnCodigoDisc);
-		txtpnCodigoDisc.setText("CPF");
-		txtpnCodigoDisc.setFont(new Font("Arial", Font.PLAIN, 13));
+		JTextPane txtCPF = new JTextPane();
+		txtCPF.setEditable(false);
+		txtCPF.setBounds(6, 25, 75, 16);
+		panel.add(txtCPF);
+		txtCPF.setText("CPF");
+		txtCPF.setFont(new Font("Arial", Font.PLAIN, 13));
 		
-		JTextPane txtpnDiaDaSemana = new JTextPane();
-		txtpnDiaDaSemana.setText("CodigoProcesso");
-		txtpnDiaDaSemana.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtpnDiaDaSemana.setBounds(6, 43, 110, 16);
-		panel.add(txtpnDiaDaSemana);
+		JTextPane txtCod = new JTextPane();
+		txtCod.setEditable(false);
+		txtCod.setText("CodigoProcesso");
+		txtCod.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtCod.setBounds(6, 43, 110, 16);
+		panel.add(txtCod);
 		
-		JButton btnNewButton_1 = new JButton("");
+		JButton btnNewButton_1 = new JButton("Editar");
 		//Image img = new ImageIcon(this.getClass().getResource("/edit.png")).getImage();
 		btnNewButton_1.setIcon(new ImageIcon("./img/edit.png"));
-		btnNewButton_1.setBounds(417, 33, 45, 45);
+		btnNewButton_1.setBounds(437, 24, 90, 36);
 		panel.add(btnNewButton_1);
 		
-		JButton btnNewButton_1_1 = new JButton("");
+		JButton btnNewButton_1_1 = new JButton("Apagar");
 		btnNewButton_1_1.setIcon(new ImageIcon("./img/delete.png"));
-		btnNewButton_1_1.setBounds(474, 33, 45, 45);
+		btnNewButton_1_1.setBounds(437, 66, 90, 36);
 		panel.add(btnNewButton_1_1);
 		
-		JTextPane txtpnPontuacao = new JTextPane();
-		txtpnPontuacao.setText("Pontuacao");
-		txtpnPontuacao.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtpnPontuacao.setBounds(6, 62, 110, 16);
-		panel.add(txtpnPontuacao);
+		JTextPane txtPont = new JTextPane();
+		txtPont.setEditable(false);
+		txtPont.setText("Pontuacao");
+		txtPont.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtPont.setBounds(6, 62, 110, 16);
+		panel.add(txtPont);
 		
-		JTextPane txtpnCodigodisciplina = new JTextPane();
-		txtpnCodigodisciplina.setText("CodigoDisciplina");
-		txtpnCodigodisciplina.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtpnCodigodisciplina.setBounds(6, 82, 110, 16);
-		panel.add(txtpnCodigodisciplina);
+		JTextPane txtCodDis = new JTextPane();
+		txtCodDis.setEditable(false);
+		txtCodDis.setText("CodigoDisciplina");
+		txtCodDis.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtCodDis.setBounds(6, 82, 110, 16);
+		panel.add(txtCodDis);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Disciplina"}));
-		comboBox.setBounds(61, 98, 235, 27);
-		contentPane.add(comboBox);
+		JTextPane txtPontos = new JTextPane();
+		txtPontos.setEditable(false);
+		txtPontos.setText("Status");
+		txtPontos.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtPontos.setBounds(6, 102, 110, 16);
+		panel.add(txtPontos);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Pontuação - Padrão", "Pontuação - Crescente", "Pontuação - Decrescente"}));
-		comboBox_1.setBounds(308, 98, 236, 27);
-		contentPane.add(comboBox_1);
+		JComboBox comboDisc = new JComboBox();
+		comboDisc.setModel(new DefaultComboBoxModel(new String[] {"Disciplina"}));
+		comboDisc.setBounds(61, 98, 235, 27);
+		contentPane.add(comboDisc);
 		
-		JTextPane txtpnFiltros = new JTextPane();
-		txtpnFiltros.setText("Filtros");
-		txtpnFiltros.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtpnFiltros.setBackground(UIManager.getColor("Button.background"));
-		txtpnFiltros.setBounds(16, 102, 43, 16);
-		contentPane.add(txtpnFiltros);
+		JComboBox comboPontuacao = new JComboBox();
+		comboPontuacao.setModel(new DefaultComboBoxModel(new String[] {"Pontuação - Padrão", "Pontuação - Crescente", "Pontuação - Decrescente"}));
+		comboPontuacao.setBounds(308, 98, 236, 27);
+		contentPane.add(comboPontuacao);
+		
+		JTextPane txtFiltros = new JTextPane();
+		txtFiltros.setText("Filtros");
+		txtFiltros.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtFiltros.setBackground(UIManager.getColor("Button.background"));
+		txtFiltros.setBounds(16, 102, 43, 16);
+		contentPane.add(txtFiltros);
 		
 		ActionListener actListenerAdd = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TelaAddInscricao.main(null);
+				TelaManterInscricao.main(false);
 			}
 		};
 		
-		btnNewButton.addActionListener(actListenerAdd);
+		ActionListener actListenerEdit = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaManterInscricao.main(true);
+			}
+		};
+		
+		btnInsc.addActionListener(actListenerAdd);
+		btnNewButton_1.addActionListener(actListenerEdit);
 	}
 }

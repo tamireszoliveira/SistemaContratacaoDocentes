@@ -62,6 +62,7 @@ public class TelaInicial extends JFrame {
 		contentPane.setLayout(null);
 		
 		JTextPane txtpnTeste = new JTextPane();
+		txtpnTeste.setEditable(false);
 		txtpnTeste.setBounds(117, 22, 212, 29);
 		txtpnTeste.setFont(new Font("Arial", Font.PLAIN, 24));
 		txtpnTeste.setText("Escolha uma opção");

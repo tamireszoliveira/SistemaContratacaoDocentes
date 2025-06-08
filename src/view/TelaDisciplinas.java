@@ -1,7 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
-import view.TelaAddDisciplina;
+import view.TelaManterDisciplina;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -50,12 +50,13 @@ public class TelaDisciplinas extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("+ Adicionar disciplina");
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setBounds(6, 46, 538, 36);
-		contentPane.add(btnNewButton);
+		JButton btnAdd = new JButton("+ Adicionar disciplina");
+		btnAdd.setBackground(new Color(255, 255, 255));
+		btnAdd.setBounds(6, 46, 538, 36);
+		contentPane.add(btnAdd);
 		
 		JTextPane txtpnDisciplinas = new JTextPane();
+		txtpnDisciplinas.setEditable(false);
 		txtpnDisciplinas.setBackground(new Color(238, 238, 238));
 		txtpnDisciplinas.setFont(new Font("Arial", Font.PLAIN, 24));
 		txtpnDisciplinas.setText("Disciplinas");
@@ -68,59 +69,83 @@ public class TelaDisciplinas extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JTextPane txtpnDisciplina = new JTextPane();
-		txtpnDisciplina.setBounds(6, 6, 78, 19);
-		panel.add(txtpnDisciplina);
-		txtpnDisciplina.setFont(new Font("Arial", Font.PLAIN, 16));
-		txtpnDisciplina.setText("Disciplina");
+		JTextPane txtDisc = new JTextPane();
+		txtDisc.setEditable(false);
+		txtDisc.setBounds(6, 6, 78, 19);
+		panel.add(txtDisc);
+		txtDisc.setFont(new Font("Arial", Font.PLAIN, 16));
+		txtDisc.setText("Disciplina");
 		
-		JTextPane txtpnCodigoDisc = new JTextPane();
-		txtpnCodigoDisc.setBounds(6, 25, 75, 16);
-		panel.add(txtpnCodigoDisc);
-		txtpnCodigoDisc.setText("Codigo Disc");
-		txtpnCodigoDisc.setFont(new Font("Arial", Font.PLAIN, 13));
+		JTextPane txtCod = new JTextPane();
+		txtCod.setEditable(false);
+		txtCod.setBounds(6, 25, 75, 16);
+		panel.add(txtCod);
+		txtCod.setText("Codigo Disc");
+		txtCod.setFont(new Font("Arial", Font.PLAIN, 13));
 		
-		JTextPane txtpnDiaDaSemana = new JTextPane();
-		txtpnDiaDaSemana.setText("Dia da semana");
-		txtpnDiaDaSemana.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtpnDiaDaSemana.setBounds(6, 43, 110, 16);
-		panel.add(txtpnDiaDaSemana);
+		JTextPane txtDia = new JTextPane();
+		txtDia.setEditable(false);
+		txtDia.setText("Dia da semana");
+		txtDia.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtDia.setBounds(6, 43, 110, 16);
+		panel.add(txtDia);
 		
-		JTextPane txtpnHora = new JTextPane();
-		txtpnHora.setText("Horario inicial");
-		txtpnHora.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtpnHora.setBounds(6, 62, 110, 16);
-		panel.add(txtpnHora);
+		JTextPane txtHora = new JTextPane();
+		txtHora.setEditable(false);
+		txtHora.setText("Horario inicial");
+		txtHora.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtHora.setBounds(6, 62, 110, 16);
+		panel.add(txtHora);
 		
-		JTextPane txtpnHorasSemanais = new JTextPane();
-		txtpnHorasSemanais.setText("Horas semanais");
-		txtpnHorasSemanais.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtpnHorasSemanais.setBounds(6, 82, 110, 16);
-		panel.add(txtpnHorasSemanais);
+		JTextPane txtHrSemanais = new JTextPane();
+		txtHrSemanais.setEditable(false);
+		txtHrSemanais.setText("Horas semanais");
+		txtHrSemanais.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtHrSemanais.setBounds(6, 82, 110, 16);
+		panel.add(txtHrSemanais);
 		
-		JTextPane txtpnCdigoDoCurso = new JTextPane();
-		txtpnCdigoDoCurso.setText("Código do curso");
-		txtpnCdigoDoCurso.setFont(new Font("Arial", Font.PLAIN, 13));
-		txtpnCdigoDoCurso.setBounds(6, 101, 110, 16);
-		panel.add(txtpnCdigoDoCurso);
+		JTextPane txtCodCurso = new JTextPane();
+		txtCodCurso.setEditable(false);
+		txtCodCurso.setText("Código do curso");
+		txtCodCurso.setFont(new Font("Arial", Font.PLAIN, 13));
+		txtCodCurso.setBounds(6, 101, 110, 16);
+		panel.add(txtCodCurso);
 		
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setIcon(new ImageIcon("./img/edit.png"));
-		btnNewButton_1.setBounds(472, 14, 45, 45);
-		panel.add(btnNewButton_1);
+		JButton btnEdicao = new JButton("Editar");
+		btnEdicao.setIcon(new ImageIcon("./img/edit.png"));
+		btnEdicao.setBounds(419, 6, 110, 36);
+		panel.add(btnEdicao);
 		
-		JButton btnNewButton_1_1 = new JButton("");
-		btnNewButton_1_1.setIcon(new ImageIcon("./img/delete.png"));
-		btnNewButton_1_1.setBounds(472, 62, 45, 45);
-		panel.add(btnNewButton_1_1);
+		JButton btnApaga = new JButton("Apagar");
+		btnApaga.setIcon(new ImageIcon("./img/delete.png"));
+		btnApaga.setBounds(419, 81, 110, 36);
+		panel.add(btnApaga);
+		
+		JButton btnInsc = new JButton("Inscritos");
+		btnInsc.setIcon(new ImageIcon("./img/alunos.png"));
+		btnInsc.setBounds(419, 43, 110, 36);
+		panel.add(btnInsc);
 		
 		ActionListener actListenerAdd = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TelaAddDisciplina.main(null);
+				TelaManterInscricao.main(false);
 			}
 		};
 		
+		ActionListener actListenerEdit = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaManterInscricao.main(true);
+			}
+		};
 		
-		btnNewButton.addActionListener(actListenerAdd);
-	}
+		ActionListener actListenerInsc = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaDisciplinas_Inscritos.main(null);
+			}
+		};
+		
+		btnAdd.addActionListener(actListenerAdd);
+		btnEdicao.addActionListener(actListenerEdit);
+		btnInsc.addActionListener(actListenerInsc);
+		}
 }
