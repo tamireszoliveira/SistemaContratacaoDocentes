@@ -7,11 +7,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextPane;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 
@@ -52,7 +55,7 @@ public class TelaManterDisciplina extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaManterDisciplina(Boolean isEditMode) {
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 413);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -63,9 +66,9 @@ public class TelaManterDisciplina extends JFrame {
 		JTextPane txtpnAdicionarDisciplina = new JTextPane();
 		txtpnAdicionarDisciplina.setBackground(new Color(237, 238, 238));
 		if(isEditMode){
-			txtpnAdicionarDisciplina.setText("Editar Cursos");
+			txtpnAdicionarDisciplina.setText("Editar Disciplina");
 		}else {
-			txtpnAdicionarDisciplina.setText("Adicionar Cursos");
+			txtpnAdicionarDisciplina.setText("Adicionar Disciplina");
 		}
 		txtpnAdicionarDisciplina.setFont(new Font("Arial", Font.PLAIN, 24));
 		txtpnAdicionarDisciplina.setBounds(198, 6, 206, 31);
@@ -155,5 +158,19 @@ public class TelaManterDisciplina extends JFrame {
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setBounds(461, 342, 117, 29);
 		contentPane.add(btnNewButton);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setIcon(new ImageIcon("./img/voltar.png"));
+		btnVoltar.setBounds(6, 6, 64, 30);
+		contentPane.add(btnVoltar);
+		
+		ActionListener actListenerBack = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaDisciplinas.main(null);
+				dispose();
+			}
+		};
+		
+		btnVoltar.addActionListener(actListenerBack);
 	}
 }

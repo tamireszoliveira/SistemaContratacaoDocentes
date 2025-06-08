@@ -41,6 +41,7 @@ public class TelaDisciplinas_Inscritos extends JFrame {
 	 */
 	public TelaDisciplinas_Inscritos() {
 		setBounds(100, 100, 550, 349);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 

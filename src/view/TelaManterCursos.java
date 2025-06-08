@@ -7,11 +7,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextPane;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 
@@ -46,7 +49,7 @@ public class TelaManterCursos extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaManterCursos(Boolean isEditMode) {
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 291);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -109,5 +112,19 @@ public class TelaManterCursos extends JFrame {
 		areaCurso.setColumns(10);
 		areaCurso.setBounds(157, 153, 421, 37);
 		contentPane.add(areaCurso);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setIcon(new ImageIcon("./img/voltar.png"));
+		btnVoltar.setBounds(6, 6, 64, 30);
+		contentPane.add(btnVoltar);
+		
+		ActionListener actListenerBack = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaCursos.main(null);
+				dispose();
+			}
+		};
+		
+		btnVoltar.addActionListener(actListenerBack);
 	}
 }

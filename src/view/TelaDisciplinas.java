@@ -42,7 +42,7 @@ public class TelaDisciplinas extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaDisciplinas() {
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 349);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -126,21 +126,38 @@ public class TelaDisciplinas extends JFrame {
 		btnInsc.setBounds(419, 43, 110, 36);
 		panel.add(btnInsc);
 		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setIcon(new ImageIcon("./img/voltar.png"));
+		btnVoltar.setBounds(6, 6, 64, 30);
+		contentPane.add(btnVoltar);
+		
+		ActionListener actListenerBack = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaInicial.main(null);
+				dispose();
+			}
+		};
+		
+		btnVoltar.addActionListener(actListenerBack);
+		
 		ActionListener actListenerAdd = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				TelaManterInscricao.main(false);
+				dispose();
 			}
 		};
 		
 		ActionListener actListenerEdit = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				TelaManterInscricao.main(true);
+				dispose();
 			}
 		};
 		
 		ActionListener actListenerInsc = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				TelaDisciplinas_Inscritos.main(null);
+				dispose();
 			}
 		};
 		

@@ -87,22 +87,26 @@ public class TelaInicial extends JFrame {
 		ActionListener actListenerC = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				TelaCursos.main(null);
+				dispose();
 			}
 		};
 		
 		ActionListener actListenerD = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				TelaDisciplinas.main(null);
+				dispose();
 			}
 		};
 		ActionListener actListenerP = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				TelaProfessor.main(null);
+				dispose();
 			}
 		};
 		ActionListener actListenerI = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				TelaInscricoes.main(null);
+				dispose();
 			}
 		};
 		
