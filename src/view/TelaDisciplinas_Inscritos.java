@@ -3,6 +3,8 @@ package view;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -102,5 +104,19 @@ public class TelaDisciplinas_Inscritos extends JFrame {
 		lblDisciplina.setBounds(184, 42, 182, 16);
 		contentPane.add(lblDisciplina);
 		lblDisciplina.setHorizontalAlignment(JLabel.CENTER);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setIcon(new ImageIcon("./img/voltar.png"));
+		btnVoltar.setBounds(6, 6, 92, 30);
+		contentPane.add(btnVoltar);
+		
+		ActionListener actListenerBack = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaDisciplinas.main(null);
+				dispose();
+			}
+		};
+		
+		btnVoltar.addActionListener(actListenerBack);
 	}
 }
