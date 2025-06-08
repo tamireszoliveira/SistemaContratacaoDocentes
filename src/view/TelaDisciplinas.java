@@ -142,14 +142,14 @@ public class TelaDisciplinas extends JFrame {
 		
 		ActionListener actListenerAdd = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TelaManterInscricao.main(false);
+				TelaManterDisciplina.main(false);
 				dispose();
 			}
 		};
 		
 		ActionListener actListenerEdit = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TelaManterInscricao.main(true);
+				TelaManterDisciplina.main(true);
 				dispose();
 			}
 		};

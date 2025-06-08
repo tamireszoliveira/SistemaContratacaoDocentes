@@ -116,14 +116,14 @@ public class TelaProfessor extends JFrame {
 		
 		ActionListener actListenerAdd = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TelaManterInscricao.main(false);
+				TelaManterProfessor.main(false);
 				dispose();
 			}
 		};
 		
 		ActionListener actListenerEdit = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TelaManterInscricao.main(true);
+				TelaManterProfessor.main(true);
 				dispose();
 			}
 		};

@@ -116,14 +116,14 @@ public class TelaCursos extends JFrame {
 		
 		ActionListener actListenerAdd = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TelaManterInscricao.main(false);
+				TelaManterCursos.main(false);
 				dispose();
 			}
 		};
 		
 		ActionListener actListenerEdit = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TelaManterInscricao.main(true);
+				TelaManterCursos.main(true);
 				dispose();
 			}
 		};
