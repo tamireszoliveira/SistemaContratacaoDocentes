@@ -101,7 +101,7 @@ public class TelaCursos extends JFrame {
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setIcon(new ImageIcon("./img/voltar.png"));
-		btnVoltar.setBounds(6, 6, 64, 30);
+		btnVoltar.setBounds(6, 6, 92, 30);
 		contentPane.add(btnVoltar);
 		
 		ActionListener actListenerBack = new ActionListener() {
