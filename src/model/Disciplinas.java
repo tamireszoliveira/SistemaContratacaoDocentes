@@ -8,13 +8,16 @@ public class Disciplinas {
 	private LocalDate dataMinistrada;
 	private LocalTime horaInicio;
 	private int horasDiarias;
+	private String codCurso;
 	
-	public Disciplinas(String codigoDisciplina, String nomeDisciplina, LocalDate dataMinistrada, LocalTime horaInicio, int horasDiarias) {
+	public Disciplinas(String codigoDisciplina, String nomeDisciplina, LocalDate dataMinistrada, LocalTime horaInicio, int horasDiarias, String codCurso) {
 		this.codigoDisciplina = codigoDisciplina;
 		this.nomeDisciplina = nomeDisciplina;
 		this.dataMinistrada = dataMinistrada;
 		this.horaInicio = horaInicio;
 		this.horasDiarias = horasDiarias;
+		this.codCurso = codCurso;
+		
 	}
 
 	public String getCodigoDisciplina() {
@@ -56,4 +59,14 @@ public class Disciplinas {
 	public void setHorasDiarias(int horasDiarias) {
 		this.horasDiarias = horasDiarias;
 	}
+
+	public String getCodCurso() {
+		return codCurso;
+	}
+
+	public void setCodCurso(String codCurso) {
+		this.codCurso = codCurso;
+	}
+	
+	
 }

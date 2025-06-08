@@ -18,6 +18,7 @@ import view.TelaDisciplinas;
 import view.TelaCursos;
 import view.TelaProfessor;
 import view.TelaInscricoes;
+import javax.swing.JLabel;
 
 
 public class TelaInicial extends JFrame {
@@ -60,13 +61,6 @@ public class TelaInicial extends JFrame {
 			}
 		});
 		contentPane.setLayout(null);
-		
-		JTextPane txtpnTeste = new JTextPane();
-		txtpnTeste.setEditable(false);
-		txtpnTeste.setBounds(117, 22, 212, 29);
-		txtpnTeste.setFont(new Font("Arial", Font.PLAIN, 24));
-		txtpnTeste.setText("Escolha uma opção");
-		contentPane.add(txtpnTeste);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Disciplinas");
@@ -83,6 +77,11 @@ public class TelaInicial extends JFrame {
 		btnNewButton_2.setBounds(20, 167, 188, 62);
 		btnNewButton_2.setFont(new Font("Arial", Font.PLAIN, 16));
 		contentPane.add(btnNewButton_2);
+		
+		JLabel txtOpcao = new JLabel("Escolha uma opção");
+		txtOpcao.setFont(new Font("Lucida Grande", Font.PLAIN, 30));
+		txtOpcao.setBounds(89, 18, 278, 38);
+		contentPane.add(txtOpcao);
 		
 		ActionListener actListenerC = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
